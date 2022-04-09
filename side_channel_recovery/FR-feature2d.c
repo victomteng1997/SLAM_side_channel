@@ -11,7 +11,7 @@
 #define SAMPLES 15000000
 #define SLOT 2000
 #define THRESHOLD 100
-#define OFFSETNUM 4
+#define OFFSETNUM 3
 
 void fr_probe(void **vlist, uint16_t *results){
     for(int i = 0; i<OFFSETNUM;i++){
@@ -85,8 +85,8 @@ int main(int argc, char** argv){
     //uint64_t offset[]={0x41420,0x29c7b0,0x29d000,0x295a00};      //{cblas_dgemm, dgemm_incopy, dgemm_oncopy, dgemm_kernel}
     //uint64_t offset[]={0x190c88,0x1932af};   //{sgemm_itcopy,sgemm_oncopy}
     //uint64_t offset[]={0x05c725, 0x05c795, 0x05c837}; 
-    uint64_t offset[]={0x05adf3, 0x05aecd, 0x05af4e, 0x05b047}; 
-    //uint64_t offset[]={0x05bcf9, 0x05bd82, 0x05be30, 0x05bc43}; 
+    //uint64_t offset[]={0x05adf3, 0x05aecd, 0x05af4e, 0x05b047}; 
+    uint64_t offset[]={0x05aecd, 0x05af4e, 0x05b047}; 
     
     uint16_t *results = malloc(SAMPLES * OFFSETNUM * sizeof(uint16_t));   
     void **ptrs = malloc(sizeof(void *) * OFFSETNUM);
